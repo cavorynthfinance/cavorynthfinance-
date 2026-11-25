@@ -1,0 +1,54 @@
+CAVORYNTH FINANCE — PAKÈ POU KONEKTE FIREBASE
+Sit la rete sou GitHub Pages. Firebase sèvi sèlman pou koneksyon kliyan ak depo done prive.
+
+SA KI DEJA NAN index.html
+- Firebase Authentication (imèl + modpas)
+- Verifikasyon imèl
+- Rekiperasyon modpas
+- Pwofil kliyan
+- Kont demo Market Lab sove nan:
+  users/{UID}/private/marketDemo
+- Pa gen okenn tranzaksyon reyèl; kont lan se lajan demonstrasyon.
+
+ETAP FIREBASE (fè yo nan menm pwojè Firebase la)
+1. Ale sou https://console.firebase.google.com/ epi kreye pwojè "Cavorynth Finance".
+2. Nan Project settings > General > Your apps, ajoute yon aplikasyon Web.
+3. Kopye firebaseConfig Firebase bay la.
+4. Nan index.html, chèche CAVORYNTH_FIREBASE_CONFIG epi ranplase 6 valè
+   REMPlACER yo ak valè pwojè pa w la:
+   apiKey, authDomain, projectId, storageBucket,
+   messagingSenderId, appId.
+   Pa janm mete yon service-account key oswa private key nan HTML.
+5. Authentication > Sign-in method > aktive Email/Password.
+6. Authentication > Settings > Authorized domains:
+   ajoute domèn GitHub Pages egzak la, pa egzanp
+   YOUR-USERNAME.github.io (ranplase ak vrè domèn repository la).
+7. Firestore Database > Create database.
+   Chwazi production mode.
+8. Nan Firestore > Rules, kole sa ki nan firestore.rules epi peze Publish.
+9. Nan Authentication > Templates, verifye modèl imèl verifikasyon ak reset password.
+10. Mete index.html ajou sou GitHub Pages. Sit la pa bezwen deplase sou Firebase Hosting.
+
+RÈG SEKIRITE
+- Tout dokiman kliyan dwe anba users/{UID}/private/.
+- Rules yo bloke aksè si UID a pa matche oswa imèl la pa verifye.
+- Pa janm sèvi ak règleman "allow read, write: if true".
+- Pa mete done pèsonèl kliyan nan koleksyon piblik.
+- Pa pataje API secret oswa service-account key.
+
+LIMIT KI ENPÒTAN
+- Firebase pa konekte jiskaske ou mete firebaseConfig epi pibliye Firestore Rules.
+- Zouti kalkil nòmal yo fonksyone lokalman nan navigatè a; yo pa estoke done kliyan sou sèvè.
+- Kaye analiz ak kèk ansyen simulasyon segondè nan Market Lab ka rete sou aparèy la;
+  yo pa dwe konsidere kòm depo prive/senkronize atravè aparèy. Kont demo prensipal
+  nan terminal la se pati ki sove nan Firestore anba UID kliyan an.
+- Zòn administratè ak ansyen kontwòl Supabase yo dezaktive nan vèsyon sa a.
+- Pa mete modpas Firebase, kle prive, ni done peman nan HTML.
+- Tès anvan lansman: kreye de kont tès ak de imèl diferan; verifye chak imèl;
+  konekte youn apre lòt epi konfime chak kont wè sèlman pwòp kont demo li.
+
+AdSense:
+- ID editè ki nan sit la rete ca-pub-8850394602595756.
+- verifye domèn, ads.txt, paj Privacy, Terms ak Contact nan nouvo URL la.
+- Pa pibliye adrès postal pèsonèl nan HTML.
+- Pa gen okenn garanti apwobasyon AdSense.
